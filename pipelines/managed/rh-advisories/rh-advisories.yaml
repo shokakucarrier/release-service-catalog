@@ -657,7 +657,8 @@ spec:
         - apply-mapping
     - name: push-rpm-data-to-pyxis
       timeout: "4h"  # temp workaround until github.com/konflux-ci/release-service/issues/603 is fixed
-      retries: 5
+      #retries: 5
+      onError: continue  # HACK: do not merge. workaround 413 Entity Too Large
       taskRef:
         resolver: "git"
         params:
