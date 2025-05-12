@@ -22,6 +22,9 @@ Tekton task to push snapshot images to an image registry using `cosign copy`.
 | taskGitUrl              | The url to the git repo where the release-service-catalog tasks and stepactions to be used are stored                      | No       | ""                      |
 | taskGitRevision         | The revision in the taskGitUrl repo to be used                                                                             | No       | ""                      |
 
+## Changes in 7.1.0
+* Increase default number of retries from 0 to 3.
+
 ## Changes in 7.0.1
 * Fix a bug in parallel processing of pushes
   * We used just one temp file for the source image docker config and as a result, while a push for
